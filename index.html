@@ -257,8 +257,7 @@
                   </div> -->
 
                   <div class="column has-text-centered">
-                    <div class="publication-links">
-                         <!-- TODO: Update with your arXiv paper ID -->
+                    <!-- <div class="publication-links">
                       <span class="link-block">
                         <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
                         class="external-link button is-normal is-rounded is-dark">
@@ -267,10 +266,10 @@
                         </span>
                         <span>Paper</span>
                       </a>
-                    </span>
+                    </span> -->
 
                     <!-- TODO: Add your supplementary material PDF or remove this section -->
-                    <span class="link-block">
+                    <!-- <span class="link-block">
                       <a href="static/pdfs/supplementary_material.pdf" target="_blank"
                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
@@ -278,7 +277,7 @@
                       </span>
                       <span>Supplementary</span>
                     </a>
-                  </span>
+                  </span> -->
 
                   <!-- TODO: Replace with your GitHub repository URL -->
                   <!-- <span class="link-block">
@@ -366,7 +365,7 @@
 <!-- End paper abstract -->
 
 <!-- TL;DR -->
-<section class="section hero is-light">
+<section class="section hero" style="background-color: #fff;">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -385,20 +384,90 @@
             <li><strong>Method:</strong> 
               There are 2 policies involved in our method: a <strong>priamry policy</strong> as the main policy to be optimized and an <strong>exploratory policy</strong> providing the guidanced for exploration. 
               We employ the differentiable dynamics and analytical policy gradient method to obtain an temporary exploratory policy by optimizing the policy parameter with a short-horizon discounted return as objective.
-              The temporary exploratory policy and the primary policy are run parallelly to collect trajectory samples for policy updates. 
+              The temporary exploratory policy and the primary policy are run parallelly to collect trajectory samples for policy updates, 
+              resulting the primary data and exploratory data. 
               After each iteration, the exploratory policy is discarded, while the primary policy is updated using both data together.
-              Intuitively, the idea behind the design is that the temporary exploratory policy acts like a scout to discover ”locally” higher advantage state action area for primary policy updates.
+              Intuitively, the idea behind the design is that the temporary exploratory policy acts like a scout to discover ”locally” 
+              higher advantage state action area for primary policy updates.
+              Basically, the exploratory policy here provides another informative data source for the policy learning, 
+              which fuses the task information and dynamics priors into the policy learning.
             </li>
-            <div style="text-align:center; margin: 1em 0;">
-              <img src="static/images/method_no_original_ppo.pdf" alt="Method Overview" style="max-width:100%; height:auto; border:1px solid #ddd; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.05);">
+            <div style="display: flex; justify-content: center; gap: 1.5em; margin: 1em 0;">
+              <img src="static/images/illustration.jpg" alt="Method Overview 1" style="max-width:48%; height:260px; object-fit:contain; border-radius:8px;">
+              <img src="static/images/method_overview.jpg" alt="Method Overview 2" style="max-width:48%; height:260px; object-fit:contain; border-radius:8px;">
+            </div>
+            <div style="text-align:center;">
               <p style="font-size:0.95em; color:#555; margin-top:0.5em;">
-                <em>Overview of our method.</em>
+                Method Overview
               </p>
             </div>
             
-            <li><strong>Results:</strong> We conduct extensive benchmark experiments and demonstrate the effectiveness of the proposed exploration augmentation method. We further test our approach on a 6-DOF point-foot robot for velocity tracking locomotion, and conduct the simulation test and implement a successful sim-to-real deployment as the ultimate validation.</li>
+            <li><strong>Results:</strong> 
+              We conduct extensive benchmark experiments and demonstrate the effectiveness of the proposed exploration
+               augmentation method for improving sample efficiency and training stability. 
+               <div style="display: flex; justify-content: center; gap: 1.5em; margin: 1em 0;">
+                <img src="static/images/benchmark_result.jpg" alt="Simulation Results" style="max-width:100%; height:260px; object-fit:contain; border-radius:8px;">
+               </div>
+               <div style="text-align:center;">
+                <p style="font-size:0.95em; color:#555; margin-top:0.5em;">
+                  Benchmark Results
+                </p>
+              </div>
+              We further test our approach on a 6-DOF point-foot robot for velocity tracking locomotion, 
+               and conduct the simulation test and implement a successful sim-to-real deployment as the ultimate validation. 
+               See simulation test and sim-to-real deployment results below.</li>
+            <div style="display: flex; justify-content: center; gap: 1.5em; margin: 1em 0; align-items: flex-start;">
+              <div style="display: flex; flex-direction: column; align-items: center; flex: 1 1 0;">
+                <div style="height:180px; display:flex; align-items:center;">
+                  <img src="static/images/tron_selfie.jpg" alt="6-DoF biped robot." style="height:180px; width:auto; object-fit:contain; border-radius:8px; display:block;">
+                </div>
+                <div style="text-align:center; font-size:0.95em; color:#555; margin-top:0.3em;">6 DoF Biped Robot, LimX TRON</div>
+              </div>
+              <div style="display: flex; flex-direction: column; align-items: center; flex: 1 1 0;">
+                <div style="height:180px; display:flex; align-items:center;">
+                  <img src="static/images/velocity_tracking_plot.jpg" alt="Velocity tracking error for biped locomotion comparison." style="height:180px; width:auto; object-fit:contain; border-radius:8px; display:block;">
+                </div>
+                <div style="text-align:center; font-size:0.95em; color:#555; margin-top:0.3em;">Velocity Tracking Error</div>
+              </div>
+              <div style="display: flex; flex-direction: column; align-items: center; flex: 1 1 0;">
+                <div style="height:180px; display:flex; align-items:center;">
+                  <img src="static/images/bcmk_tronpfjoystick.png" alt="Training curve of ours and baseline." style="height:180px; width:auto; object-fit:contain; border-radius:8px; display:block;">
+                </div>
+                <div style="text-align:center; font-size:0.95em; color:#555; margin-top:0.3em;">Training Curve</div>
+              </div>
+            </div>
+
+               
+              
+            </li>
             
-            <li><strong>Discussion:</strong> We discuss the limitations of the proposed method and the future directions. Our code will be released soon.</li>
+            <li><strong>Discussion:</strong> 
+            <ul style="margin-top:0.5em; margin-bottom:0.5em;">
+              <li>
+                The proposed method bridges the gap between data-expensive on-policy reinforcement learning and 
+                sample-efficient analytical gradient approaches. 
+                RL, known as a zero-order gradient based approach, is inefficient but fexible for reward form. 
+                APG, a first-order gradient based approach, is efficient but limited to differentiable reward functions.
+                Our approach has the potential to unify both advantages by employing analytical gradients only to guide 
+                exploration, which only requires the task reward function to be differentiable. 
+                In main policy update, can still optimize over a broader reward function that includes non-differentiable 
+                regularization terms, thereby offering greater compatibility than purely gradient-based methods.
+              </li>
+              <li>
+                Why we keep part of data from primary policy rollout for main policy update?
+                  (1) The APG-guided exploratory policy is short-horizon and may get trapped in local optima, reducing state-action coverage. 
+                  Retaining PPO's undirected samples preserves global exploration diversity and prevents local convergence.
+                  (2) Analytical gradients may be inaccurate due to model errors or discontinuities, producing poor exploratory behaviors. 
+                  PPO data provides robustness and prevents policy degeneration under such cases.
+              </li>
+              <li>
+                Our exploration augmentation method may lose effcacy under sparse reward settings, such as the sparse goal-reaching task.
+              </li>
+              <li> Our method heavily relies on the fidelity of the differentiable dynamics simulation. 
+            </ul>
+              
+
+            </li>
           </ul>
         </div>
       </div>
@@ -407,146 +476,81 @@
 </section>
 <!-- End TL;DR -->
 
-
-<!-- Image carousel -->
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- TODO: Replace with your research result images -->
-        <img src="static/images/carousel1.jpg" alt="First research result visualization" loading="lazy"/>
-        <!-- TODO: Replace with description of this result -->
-        <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel2.jpg" alt="Second research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/carousel3.jpg" alt="Third research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-      <!-- Your image here -->
-      <img src="static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
-  </div>
-</div>
-</div>
-</section>
-<!-- End image carousel -->
-
-
-
-
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- TODO: Replace with your YouTube video ID -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-          </div>
+      <h2 class="title is-3" style="text-align:center;">Simulation Test</h2>
+      <div style="display: flex; flex-wrap: nowrap; justify-content: center; gap: 1.5em;">
+        <div style="flex: 1 1 0; max-width: 32%; min-width: 220px;">
+          <video controls muted loop style="width: 100%; border-radius: 8px; background: #eee;">
+            <source src="static/videos/sim_demo_ours.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div style="text-align:center; margin-top:0.5em; color:#555;">Forward Locomotion (Indoor)</div>
+        </div>
+        <div style="flex: 1 1 0; max-width: 32%; min-width: 220px;">
+          <video controls muted loop style="width: 100%; border-radius: 8px; background: #eee;">
+            <source src="static/videos/sim_demo_ppo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div style="text-align:center; margin-top:0.5em; color:#555;">Forward Locomotion (Outdoor)</div>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- End youtube video -->
 
 
-<!-- Video carousel -->
 <section class="hero is-small">
   <div class="hero-body">
     <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video1" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4" type="video/mp4">
+      <h2 class="title is-3" style="text-align:center;">Sim-to-Real Experiments</h2>
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5em;">
+        <div style="flex: 1 1 45%; max-width: 45%; min-width: 300px; margin-bottom: 1.5em;">
+          <video controls muted loop style="width: 100%; border-radius: 8px; background: #eee;">
+            <source src="static/videos/indoor_walking_1_3dot25.mp4" type="video/mp4">
+            Your browser does not support the video tag.
           </video>
+          <div style="text-align:center; margin-top:0.5em; color:#555;">Forward Locomotion (Indoor)</div>
         </div>
-        <div class="item item-video2">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video2" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4" type="video/mp4">
+        <div style="flex: 1 1 45%; max-width: 45%; min-width: 300px; margin-bottom: 1.5em;">
+          <video controls muted loop style="width: 100%; border-radius: 8px; background: #eee;">
+            <source src="static/videos/outdoor_walking_4_3dot25.mp4" type="video/mp4">
+            Your browser does not support the video tag.
           </video>
+          <div style="text-align:center; margin-top:0.5em; color:#555;">Forward Locomotion (Outdoor)</div>
         </div>
-        <div class="item item-video3">
-          <!-- TODO: Add poster image for better preview -->
-          <video poster="" id="video3" controls muted loop height="100%" preload="metadata">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4" type="video/mp4">
+        <div style="flex: 1 1 45%; max-width: 45%; min-width: 300px; margin-bottom: 1.5em;">
+          <video controls muted loop style="width: 100%; border-radius: 8px; background: #eee;">
+            <source src="static/videos/outdoor_walking_5_3dot25.mp4" type="video/mp4">
+            Your browser does not support the video tag.
           </video>
+          <div style="text-align:center; margin-top:0.5em; color:#555;">Backward Locomotion (Outdoor)</div>
+        </div>
+        <div style="flex: 1 1 45%; max-width: 45%; min-width: 300px; margin-bottom: 1.5em;">
+          <video controls muted loop style="width: 100%; border-radius: 8px; background: #eee;">
+            <source src="static/videos/outdoor_walking_6_lateral_3dot25.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <div style="text-align:center; margin-top:0.5em; color:#555;">Lateral Locomotion (Outdoor)</div>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- End video carousel -->
-
-
-
-
 
 
 <!-- Paper poster -->
-<section class="hero is-small is-light">
+<!-- <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
       <h2 class="title">Poster</h2>
-
-      <!-- TODO: Replace with your poster PDF -->
       <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
           </iframe>
-        
       </div>
     </div>
-  </section>
+  </section> -->
 <!--End paper poster -->
-
-
-
-<!--BibTex citation -->
-  <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <div class="bibtex-header">
-        <h2 class="title">BibTeX</h2>
-        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
-          <i class="fas fa-copy"></i>
-          <span class="copy-text">Copy</span>
-        </button>
-      </div>
-      <pre id="bibtex-code"><code>@article{YourPaperKey2024,
-  title={Your Paper Title Here},
-  author={First Author and Second Author and Third Author},
-  journal={Conference/Journal Name},
-  year={2024},
-  url={https://your-domain.com/your-project-page}
-}</code></pre>
-    </div>
-</section>
-<!--End BibTex citation -->
 
 
   <footer class="footer">
@@ -556,9 +560,11 @@
         <div class="content">
 
           <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-            Commons Attribution-ShareAlike 4.0 International License</a>.
+            <span style="font-size: 0.8em; display: block; text-align: center;">
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+              <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+              Commons Attribution-ShareAlike 4.0 International License</a>.
+            </span>
           </p>
 
         </div>
