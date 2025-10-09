@@ -486,14 +486,14 @@
             <source src="static/videos/sim_demo_ours.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
-          <div style="text-align:center; margin-top:0.5em; color:#555;">Forward Locomotion (Indoor)</div>
+          <div style="text-align:center; margin-top:0.5em; color:#555;">Ours</div>
         </div>
         <div style="flex: 1 1 0; max-width: 32%; min-width: 220px;">
           <video controls muted loop style="width: 100%; border-radius: 8px; background: #eee;">
             <source src="static/videos/sim_demo_ppo.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
-          <div style="text-align:center; margin-top:0.5em; color:#555;">Forward Locomotion (Outdoor)</div>
+          <div style="text-align:center; margin-top:0.5em; color:#555;">Baseline (PPO)</div>
         </div>
       </div>
     </div>
@@ -538,6 +538,103 @@
     </div>
   </div>
 </section>
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3" style="text-align:center;">Misc</h2>
+      <div style="margin-top:2em;">
+        <h3 class="title is-4" style="text-align:center;">Implementation Details</h3>
+        <div style="color:#555; text-align:center; margin-top:0.5em;">
+          <p>
+            <div style="max-width:800px; margin:0 auto;">
+              We employ the <a href="https://playground.mujoco.org/" target="_blank">MuJoCo Playground</a> and <a href="https://github.com/google/brax" target="_blank">Brax</a> to help implement the algorithm. The original while loop implementation of the MJX solver, <code>jax.lax.while_loop</code>, 
+              performs dynamic iteration based on runtime conditions and thus cannot be statically unrolled during JIT compilation, 
+              which means it does not support gradient computation. Original code snippet:
+            </div>
+          <div style="margin-top:1em; text-align:center;">
+            <div style="display:inline-block; max-width:600px; width:100%;">
+              <div style="background:#f6f8fa; border:1px solid #d0d7de; border-radius:6px; overflow:hidden;">
+                <div style="display:flex; align-items:center; justify-content:space-between; background:#f6f8fa; border-bottom:1px solid #d0d7de; padding:0.5em 1em;">
+                  <div style="font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; font-size:0.95em; color:#57606a;">
+                    <svg style="vertical-align:middle; margin-right:0.3em;" height="18" viewBox="0 0 16 16" width="18" aria-hidden="true"><path fill="#24292f" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.01.08-2.1 0 0 .67-.21 2.2.82a7.65 7.65 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.09.16 1.9.08 2.1.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.19 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
+                    <span>mjx/mujoco/mjx/_src/solver.py</span>
+                    <span style="color:#d0d7de; margin:0 0.5em;">|</span>
+                    <span style="color:#57606a;">L598-L602</span>
+                  </div>
+                  <a href="https://github.com/google-deepmind/mujoco/blob/3a299c49caf3d2f227755860b6f60ce0995f46b4/mjx/mujoco/mjx/_src/solver.py#L598-L602" target="_blank" style="text-decoration:none; color:#3273dc; font-weight:bold; font-size:0.95em;">
+                    View on GitHub
+                  </a>
+                </div>
+                <pre id="github-code-snippet" style="background:#fff; margin:0; padding:1em; font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; font-size:0.97em; color:#24292f; overflow-x:auto; min-height:80px; text-align:left;">加载中...</pre>
+              </div>
+            </div>
+          </div>
+          <script>
+            // 自动抓取 GitHub 仓库文件片段并显示
+            (function() {
+              const url = "https://raw.githubusercontent.com/google-deepmind/mujoco/3a299c49caf3d2f227755860b6f60ce0995f46b4/mjx/mujoco/mjx/_src/solver.py";
+              const startLine = 598;
+              const endLine = 602;
+              const pre = document.getElementById('github-code-snippet');
+              fetch(url)
+                .then(resp => resp.ok ? resp.text() : Promise.reject('cannot get code'))
+                .then(text => {
+                  const lines = text.split('\n');
+                  // note: line number starts from 1
+                  const snippet = lines.slice(startLine - 1, endLine).join('\n');
+                  pre.textContent = snippet || 'no code snippet found';
+                })
+                .catch(e => {
+                  pre.textContent = 'loading failed: ' + e;
+                });
+            })();
+          </script>
+          We replace the <code>jax.lax.while_loop</code> to <code>_while_loop_scan</code> provided by the MJX to support gradient computation.
+      <div style="margin-top:2em; text-align:center;">
+        <div style="display:inline-block; max-width:600px; width:100%;">
+          <div style="background:#f6f8fa; border:1px solid #d0d7de; border-radius:6px; overflow:hidden;">
+            <div style="display:flex; align-items:center; justify-content:space-between; background:#f6f8fa; border-bottom:1px solid #d0d7de; padding:0.5em 1em;">
+              <div style="font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; font-size:0.95em; color:#57606a;">
+                <svg style="vertical-align:middle; margin-right:0.3em;" height="18" viewBox="0 0 16 16" width="18" aria-hidden="true"><path fill="#24292f" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.01.08-2.1 0 0 .67-.21 2.2.82a7.65 7.65 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.09.16 1.9.08 2.1.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.19 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
+                <span>mjx/mujoco/mjx/_src/solver.py</span>
+                <span style="color:#d0d7de; margin:0 0.5em;">|</span>
+                <span style="color:#57606a;">L239-L253</span>
+              </div>
+              <a href="https://github.com/google-deepmind/mujoco/blob/3a299c49caf3d2f227755860b6f60ce0995f46b4/mjx/mujoco/mjx/_src/solver.py#L239C1-L253C63" target="_blank" style="text-decoration:none; color:#3273dc; font-weight:bold; font-size:0.95em;">
+                View on GitHub
+              </a>
+            </div>
+            <pre id="github-code-snippet-scan" style="background:#fff; margin:0; padding:1em; font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; font-size:0.97em; color:#24292f; overflow-x:auto; min-height:80px; text-align:left;">加载中...</pre>
+          </div>
+        </div>
+      </div>
+      <script>
+        // 动态抓取 GitHub 仓库文件片段并显示
+        (function() {
+          const url = "https://raw.githubusercontent.com/google-deepmind/mujoco/3a299c49caf3d2f227755860b6f60ce0995f46b4/mjx/mujoco/mjx/_src/solver.py";
+          const startLine = 239;
+          const endLine = 253;
+          const pre = document.getElementById('github-code-snippet-scan');
+          fetch(url)
+            .then(resp => resp.ok ? resp.text() : Promise.reject('cannot get code'))
+            .then(text => {
+              const lines = text.split('\n');
+              // note: line number starts from 1
+              const snippet = lines.slice(startLine - 1, endLine).join('\n');
+              pre.textContent = snippet || 'no code snippet found';
+            })
+            .catch(e => {
+              pre.textContent = 'loading failed: ' + e;
+            });
+        })();
+      </script>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
 
 <!-- Paper poster -->
