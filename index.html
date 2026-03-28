@@ -1,71 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+
   <!-- Primary Meta Tags -->
   <!-- TODO: Replace with your paper title and author names -->
   <meta name="title" content="Where-to-Learn: Analytical Policy Gradient Directed Exploration
-  for On-policy Robotic Reinforcement Learning - Anonymous Authors">
+  for On-policy Robotic Reinforcement Learning">
   <!-- TODO: Write a compelling 150-160 character description of your research -->
-  <meta name="description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
+  <meta name="description"
+    content="We propose a new form of directed exploration that uses analytical policy gradients from a differentiable dynamics model to inject task-aware, physics-guided guidance for reinforcement learning.">
   <!-- TODO: Add 5-10 relevant keywords for your research area -->
-  <meta name="keywords" content="KEYWORD1, KEYWORD2, KEYWORD3, machine learning, computer vision, AI">
+  <meta name="keywords"
+    content="Reinforcement Learning, Robotics, RL Exploration, Policy Gradient, Differentiable Physics">
   <!-- TODO: List all authors -->
-  <meta name="author" content="FIRST_AUTHOR_NAME, SECOND_AUTHOR_NAME">
+  <meta name="author" content="Leixin Chang, Xinchen Yao, Ben Liu, Liangjing Yang, Hua Chen">
   <meta name="robots" content="index, follow">
   <meta name="language" content="English">
-  
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="article">
-  <!-- TODO: Replace with your institution or lab name -->
-  <meta property="og:site_name" content="INSTITUTION_OR_LAB_NAME">
-  <!-- TODO: Same as paper title above -->
-  <meta property="og:title" content="PAPER_TITLE">
-  <!-- TODO: Same as description above -->
-  <meta property="og:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Replace with your actual website URL -->
-  <meta property="og:url" content="https://YOUR_DOMAIN.com/YOUR_PROJECT_PAGE">
-  <!-- TODO: Create a 1200x630px preview image and update path -->
-  <meta property="og:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="PAPER_TITLE - Research Preview">
-  <meta property="article:published_time" content="2024-01-01T00:00:00.000Z">
-  <meta property="article:author" content="FIRST_AUTHOR_NAME">
-  <meta property="article:section" content="Research">
-  <meta property="article:tag" content="KEYWORD1">
-  <meta property="article:tag" content="KEYWORD2">
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <!-- TODO: Replace with your lab/institution Twitter handle -->
-  <meta name="twitter:site" content="@YOUR_TWITTER_HANDLE">
-  <!-- TODO: Replace with first author's Twitter handle -->
-  <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE">
-  <!-- TODO: Same as paper title above -->
-  <meta name="twitter:title" content="PAPER_TITLE">
-  <!-- TODO: Same as description above -->
-  <meta name="twitter:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
-  <!-- TODO: Same as social preview image above -->
-  <meta name="twitter:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
-  <meta name="twitter:image:alt" content="PAPER_TITLE - Research Preview">
-
-  <!-- Academic/Research Specific -->
-  <meta name="citation_title" content="PAPER_TITLE">
-  <meta name="citation_author" content="FIRST_AUTHOR_LAST, FIRST_AUTHOR_FIRST">
-  <meta name="citation_author" content="SECOND_AUTHOR_LAST, SECOND_AUTHOR_FIRST">
-  <meta name="citation_publication_date" content="2024">
-  <meta name="citation_conference_title" content="CONFERENCE_NAME">
-  <meta name="citation_pdf_url" content="https://YOUR_DOMAIN.com/static/pdfs/paper.pdf">
-  
   <!-- Additional SEO -->
   <meta name="theme-color" content="#2563eb">
   <meta name="msapplication-TileColor" content="#2563eb">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  
+
   <!-- Preconnect for performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -77,21 +37,24 @@
   <!-- TODO: Replace with your paper title and authors -->
   <title>Where-to-Learn: Analytical Policy Gradient Directed Exploration
     for On-policy Robotic Reinforcement Learning - Anonymous Authors | Academic Research</title>
-  
+
   <!-- Favicon and App Icons -->
   <link rel="icon" type="image/x-icon" href="static/images/idea_illustration_2.ico">
   <link rel="apple-touch-icon" href="static/images/idea_illustration_2.ico">
-  
+
   <!-- Critical CSS - Load synchronously -->
   <link rel="stylesheet" href="static/css/bulma.min.css">
   <link rel="stylesheet" href="static/css/index.css">
-  
+
   <!-- Non-critical CSS - Load asynchronously -->
-  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+
   <!-- Fallback for browsers that don't support preload -->
   <noscript>
     <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
@@ -99,10 +62,10 @@
     <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   </noscript>
-  
+
   <!-- Fonts - Optimized loading -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
+
   <!-- Defer non-critical JavaScript -->
   <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
@@ -110,7 +73,7 @@
   <script defer src="static/js/bulma-carousel.min.js"></script>
   <script defer src="static/js/bulma-slider.min.js"></script>
   <script defer src="static/js/index.js"></script>
-  
+
   <!-- Structured Data for Academic Papers -->
   <script type="application/ld+json">
   {
@@ -165,7 +128,7 @@
     ]
   }
   </script>
-  
+
   <!-- Website/Organization Structured Data -->
   <script type="application/ld+json">
   {
@@ -181,6 +144,7 @@
   }
   </script>
 </head>
+
 <body>
 
 
@@ -233,43 +197,70 @@
   </div> -->
 
   <main id="main-content">
-  <section class="hero">
-    <div class="hero-body">
-      <div class="container is-max-desktop"> 
-        <div class="columns is-centered">
-          <div class="column has-text-centered">
-            <!-- TODO: Replace with your paper title -->
-            <h1 class="title is-1 publication-title">Where-to-Learn: Analytical Policy Gradient Directed Exploration
-              for On-Policy Robotic Reinforcement Learning</h1>
-            <div class="is-size-5 publication-authors">
-              <!-- TODO: Replace with your paper authors and their personal links -->
-              <span class="author-block"> Anonymous Authors<sup>*</sup></span>
-                <!-- <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
-                  <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
-                  </span> -->
-                  </div>
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <!-- TODO: Replace with your paper title -->
+              <h1 class="title is-1 publication-title">Where-to-Learn: Analytical Policy Gradient Directed Exploration
+                for On-Policy Robotic Reinforcement Learning</h1>
+              <div class="is-size-5 publication-authors">
+                <!-- TODO: Replace with your paper authors and their personal links -->
+                <span class="author-block"> <a href="leixinjonaschang.github.io" target="_blank">Leixin
+                    Chang<sup>&dagger;</sup></a>,
+                </span>
+                <span class="author-block">
+                  <a href="https://yao-xinchen.github.io/" target="_blank">Xinchen Yao<sup>&dagger;</sup></a>,
+                </span>
+                <span class="author-block">
+                  <a href="https://scholar.google.com/citations?user=Ozn4458AAAAJ&hl=zh-CN" target="_blank">Ben
+                    Liu<sup>&Dagger;</sup></a>,
+                </span>
+                <span class="author-block">
+                  <a href="https://person.zju.edu.cn/en/ylj" target="_blank">Liangjing Yang<sup>&dagger;</sup></a>,
+                </span>
+                <span class="author-block">
+                  <a href="https://physicalintelligence-lab.github.io/author/hua-chen/" target="_blank">Hua
+                    Chen<sup>&dagger;</sup></a>
+                </span>
+              </div>
 
-                  <!-- <div class="is-size-5 publication-authors">
+              <!-- add affliations info -->
+              <div class="is-size-5 publication-authors">
+                <span class="author-block"><sup>&dagger;</sup>Zhejiang University</span>
+                <br>
+                <span class="author-block"><sup>&Dagger;</sup>Southern University of Science and Technology</span>
+              </div>
+
+              <!-- <div class="is-size-5 publication-authors">
                     <span class="author-block">Institution Name<br>Conference name and year</span>
                     <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
                   </div> -->
 
-                  <div class="column has-text-centered">
-                    <!-- <div class="publication-links">
-                      <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
-                    </span> -->
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                  <span class="link-block">
+                    <a href="static/pdfs/paper_where_to_learn.pdf" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Paper</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a href="https://ieeexplore.ieee.org/document/11456663" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="ai ai-ieee"></i>
+                      </span>
+                      <span>IEEE RA-L Published</span>
+                    </a>
+                  </span>
 
-                    <!-- TODO: Add your supplementary material PDF or remove this section -->
-                    <!-- <span class="link-block">
+                  <!-- TODO: Add your supplementary material PDF or remove this section -->
+                  <!-- <span class="link-block">
                       <a href="static/pdfs/supplementary_material.pdf" target="_blank"
                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
@@ -290,355 +281,409 @@
                   </a>
                 </span> -->
 
-                <!-- TODO: Update with your arXiv paper ID -->
-                <!-- <span class="link-block">
+                  <!-- TODO: Update with your arXiv paper ID -->
+                  <!-- <span class="link-block">
                   <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="ai ai-arxiv"></i>
                   </span>
                   <span>arXiv</span> -->
-                </a>
-              </span>
+                  </a>
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
 
-<!-- Teaser video-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <!-- TODO: Replace with your teaser video -->
-      <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
-        <!-- TODO: Add your video file path here -->
-        <source src="static/videos/apg_aug_explore_video.mp4" type="video/mp4">
-      </video>
-      <!-- TODO: Replace with your video description -->
-      <!-- <h2 class="subtitle has-text-centered">
+    <!-- Teaser video-->
+    <section class="hero teaser">
+      <div class="container is-max-desktop">
+        <div class="hero-body">
+          <!-- TODO: Replace with your teaser video -->
+          <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata">
+            <!-- TODO: Add your video file path here -->
+            <source src="static/videos/apg_aug_explore_video.mp4" type="video/mp4">
+          </video>
+          <!-- TODO: Replace with your video description -->
+          <!-- <h2 class="subtitle has-text-centered">
         Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
       </h2> -->
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
-
-<!-- Paper abstract -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <!-- TODO: Replace with your paper abstract -->
-          <p>
-            On-policy reinforcement learning (RL) algorithms
-            have demonstrated great potential in robotic control, where
-            effective exploration is crucial for efficient and high-quality
-            policy learning. However, how to encourage the agent to explore
-            the better trajectories efficiently remains a challenge. Most
-            existing methods incentivize exploration by maximizing the
-            policy entropy or encouraging novel state visiting regard-
-            less of the potential state value. We propose a new form
-            of directed exploration that uses analytical policy gradients
-            from a differentiable dynamics model to inject task-aware,
-            physics-guided guidance, thereby steering the agent towards
-            high-reward regions for accelerated and more effective policy
-            learning. We integrate our exploration approach into a widely
-            used on-policy RL algorithm, Proximal Policy Optimization,
-            to test and demonstrate its effectiveness. We conduct extensive
-            benchmark experiments and demonstrate the effectiveness of
-            the proposed exploration augmentation method. We further test
-            our approach on a 6-DOF point-foot robot for velocity tracking
-            locomotion, and conduct the simulation test and implement a
-            successful sim-to-real deployment as the ultimate validation.
-          </p>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-<!-- End paper abstract -->
+    </section>
+    <!-- End teaser video -->
 
-<!-- TL;DR -->
-<section class="section hero" style="background-color: #fff;">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">TL;DR</h2>
-        <div class="content has-text-left">
-          <ul>
-            <li><strong>Motivation:</strong> 
-              Exploration is cruicial for on-policy RL. 
-              Current on-policy RL methods suffer from low sample efficiency partially due to their reliance on undirected exploration, 
-              such as policy entropy maximization or novel state visiting encouraging. 
-              We propose an exploration augmentation method using Analytical Policy Gradients (APG) and a differentiable dynamics model. 
-              We try to injects task-aware and physics-guided guidance into exploration, 
-              transforming it into a task-oriented directed process that improves sample efficiency and training stability.
-            </li>
-            
-            <li><strong>Method:</strong> 
-              There are 2 policies involved in our method: a <strong>priamry policy</strong> as the main policy to be optimized and an <strong>exploratory policy</strong> providing the guidanced for exploration. 
-              We employ the differentiable dynamics and analytical policy gradient method to obtain an temporary exploratory policy by optimizing the policy parameter with a short-horizon discounted return as objective.
-              The temporary exploratory policy and the primary policy are run parallelly to collect trajectory samples for policy updates, 
-              resulting the primary data and exploratory data. 
-              After each iteration, the exploratory policy is discarded, while the primary policy is updated using both data together.
-              Intuitively, the idea behind the design is that the temporary exploratory policy acts like a scout to discover ”locally” 
-              higher advantage state action area for primary policy updates.
-              Basically, the exploratory policy here provides another informative data source for the policy learning, 
-              which fuses the task information and dynamics priors into the policy learning.
-            </li>
-            <div style="display: flex; justify-content: center; gap: 1.5em; margin: 1em 0;">
-              <img src="static/images/illustration.jpg" alt="Method Overview 1" style="max-width:48%; height:260px; object-fit:contain; border-radius:8px;">
-              <img src="static/images/method_overview.jpg" alt="Method Overview 2" style="max-width:48%; height:260px; object-fit:contain; border-radius:8px;">
-            </div>
-            <div style="text-align:center;">
-              <p style="font-size:0.95em; color:#555; margin-top:0.5em;">
-                Method Overview
+    <!-- Paper abstract -->
+    <section class="section hero is-light">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Abstract</h2>
+            <div class="content has-text-justified">
+              <!-- TODO: Replace with your paper abstract -->
+              <p>
+                On-policy reinforcement learning (RL) algorithms
+                have demonstrated great potential in robotic control, where
+                effective exploration is crucial for efficient and high-quality
+                policy learning. However, how to encourage the agent to explore
+                the better trajectories efficiently remains a challenge. Most
+                existing methods incentivize exploration by maximizing the
+                policy entropy or encouraging novel state visiting regard-
+                less of the potential state value. We propose a new form
+                of directed exploration that uses analytical policy gradients
+                from a differentiable dynamics model to inject task-aware,
+                physics-guided guidance, thereby steering the agent towards
+                high-reward regions for accelerated and more effective policy
+                learning. We integrate our exploration approach into a widely
+                used on-policy RL algorithm, Proximal Policy Optimization,
+                to test and demonstrate its effectiveness. We conduct extensive
+                benchmark experiments and demonstrate the effectiveness of
+                the proposed exploration augmentation method. We further test
+                our approach on a 6-DOF point-foot robot for velocity tracking
+                locomotion, and conduct the simulation test and implement a
+                successful sim-to-real deployment as the ultimate validation.
               </p>
             </div>
-            
-            <li><strong>Results:</strong> 
-              We conduct extensive benchmark experiments and demonstrate the effectiveness of the proposed exploration
-               augmentation method for improving sample efficiency and training stability. 
-               <div style="display: flex; justify-content: center; gap: 1.5em; margin: 1em 0;">
-                <img src="static/images/benchmark_result.jpg" alt="Simulation Results" style="max-width:100%; height:260px; object-fit:contain; border-radius:8px;">
-               </div>
-               <div style="text-align:center;">
-                <p style="font-size:0.95em; color:#555; margin-top:0.5em;">
-                  Benchmark Results
-                </p>
-              </div>
-              We further test our approach on a 6-DOF point-foot robot for velocity tracking locomotion, 
-               and conduct the simulation test and implement a successful sim-to-real deployment as the ultimate validation. 
-               See simulation test and sim-to-real deployment results below.</li>
-            <div style="display: flex; justify-content: center; gap: 1.5em; margin: 1em 0; align-items: flex-start;">
-              <div style="display: flex; flex-direction: column; align-items: center; flex: 1 1 0;">
-                <div style="height:180px; display:flex; align-items:center;">
-                  <img src="static/images/tron_selfie.jpg" alt="6-DoF biped robot." style="height:180px; width:auto; object-fit:contain; border-radius:8px; display:block;">
-                </div>
-                <div style="text-align:center; font-size:0.95em; color:#555; margin-top:0.3em;">6 DoF Biped Robot, LimX TRON</div>
-              </div>
-              <div style="display: flex; flex-direction: column; align-items: center; flex: 1 1 0;">
-                <div style="height:180px; display:flex; align-items:center;">
-                  <img src="static/images/velocity_tracking_plot.jpg" alt="Velocity tracking error for biped locomotion comparison." style="height:180px; width:auto; object-fit:contain; border-radius:8px; display:block;">
-                </div>
-                <div style="text-align:center; font-size:0.95em; color:#555; margin-top:0.3em;">Velocity Tracking Error</div>
-              </div>
-              <div style="display: flex; flex-direction: column; align-items: center; flex: 1 1 0;">
-                <div style="height:180px; display:flex; align-items:center;">
-                  <img src="static/images/bcmk_tronpfjoystick.png" alt="Training curve of ours and baseline." style="height:180px; width:auto; object-fit:contain; border-radius:8px; display:block;">
-                </div>
-                <div style="text-align:center; font-size:0.95em; color:#555; margin-top:0.3em;">Training Curve</div>
-              </div>
-            </div>
-
-               
-              
-            </li>
-            
-            <li><strong>Discussion:</strong> 
-            <ul style="margin-top:0.5em; margin-bottom:0.5em;">
-              <li>
-                The proposed method bridges the gap between data-expensive on-policy reinforcement learning and 
-                sample-efficient analytical gradient approaches. 
-                RL, known as a zero-order gradient based approach, is inefficient but fexible for reward form. 
-                APG, a first-order gradient based approach, is efficient but limited to differentiable reward functions.
-                Our approach has the potential to unify both advantages by employing analytical gradients only to guide 
-                exploration, which only requires the task reward function to be differentiable. 
-                In main policy update, can still optimize over a broader reward function that includes non-differentiable 
-                regularization terms, thereby offering greater compatibility than purely gradient-based methods.
-              </li>
-              <li>
-                Why we keep part of data from primary policy rollout for main policy update?
-                  (1) The APG-guided exploratory policy is short-horizon and may get trapped in local optima, reducing state-action coverage. 
-                  Retaining PPO's undirected samples preserves global exploration diversity and prevents local convergence.
-                  (2) Analytical gradients may be inaccurate due to model errors or discontinuities, producing poor exploratory behaviors. 
-                  PPO data provides robustness and prevents policy degeneration under such cases.
-              </li>
-              <li>
-                Our exploration augmentation method may lose effcacy under sparse reward settings, such as the sparse goal-reaching task.
-              </li>
-              <li> Our method heavily relies on the fidelity of the differentiable dynamics simulation. 
-            </ul>
-              
-
-            </li>
-          </ul>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
-<!-- End TL;DR -->
+    </section>
+    <!-- End paper abstract -->
 
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3" style="text-align:center;">Simulation Test</h2>
-      <div style="display: flex; flex-wrap: nowrap; justify-content: center; gap: 1.5em;">
-        <div style="flex: 1 1 0; max-width: 32%; min-width: 220px;">
-          <video controls muted loop style="width: 100%; border-radius: 8px; background: #eee;">
-            <source src="static/videos/sim_demo_ours.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <div style="text-align:center; margin-top:0.5em; color:#555;">Ours</div>
-        </div>
-        <div style="flex: 1 1 0; max-width: 32%; min-width: 220px;">
-          <video controls muted loop style="width: 100%; border-radius: 8px; background: #eee;">
-            <source src="static/videos/sim_demo_ppo.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <div style="text-align:center; margin-top:0.5em; color:#555;">Baseline (PPO)</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    <!-- TL;DR -->
+    <section class="section hero" style="background-color: #fff;">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Briefs</h2>
+            <div class="content has-text-left">
+              <ul>
+                <li><strong>Motivation:</strong>
+                  Exploration is crucial for on-policy RL, yet <b>(a)</b> existing methods are often sample-inefficient
+                  partially
+                  because
+                  they rely on undirected mechanisms such as entropy maximization or novelty seeking. <b>(b)</b>
+                  Although
+                  differentiable simulation can provide analytical policy gradients (APG) with task-aware,
+                  physics-informed directions, directly using APG for policy optimization is often unstable in
+                  contact-rich robotics. We instead use APG as a safe exploration prior, turning blind exploration into
+                  directed, task-oriented search and thereby improving sample efficiency and training stability.
+                </li>
 
+                <li><strong>Method:</strong>
+                  There are 2 policies involved in our method: a <strong>priamry policy</strong> as the main policy to
+                  be optimized and an <strong>exploratory policy</strong> providing the guidanced for exploration.
+                  We employ the differentiable dynamics and analytical policy gradient method to obtain an temporary
+                  exploratory policy by optimizing the policy parameter with a short-horizon discounted return as
+                  objective.
+                  The temporary exploratory policy and the primary policy are run parallelly to collect trajectory
+                  samples for policy updates,
+                  resulting the primary data and exploratory data.
+                  After each iteration, the exploratory policy is discarded, while the primary policy is updated using
+                  both data together.
+                  Intuitively, the idea behind the design is that the temporary exploratory policy acts like a scout to
+                  discover ”locally”
+                  higher advantage state action area for primary policy updates.
+                  Basically, the exploratory policy here provides another informative data source for the policy
+                  learning,
+                  which fuses the task information and dynamics priors into the policy learning.
+                </li>
+                <div style="display: flex; justify-content: center; gap: 1.5em; margin: 1em 0;">
+                  <img src="static/images/illustration.jpg" alt="Method Overview 1"
+                    style="max-width:48%; height:260px; object-fit:contain; border-radius:8px;">
+                  <img src="static/images/method_overview.jpg" alt="Method Overview 2"
+                    style="max-width:48%; height:260px; object-fit:contain; border-radius:8px;">
+                </div>
+                <div style="text-align:center;">
+                  <p style="font-size:0.95em; color:#555; margin-top:0.5em;">
+                    Method Overview
+                  </p>
+                </div>
 
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3" style="text-align:center;">Sim-to-Real Experiments</h2>
-      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5em;">
-        <div style="flex: 1 1 45%; max-width: 45%; min-width: 300px; margin-bottom: 1.5em;">
-          <video controls muted loop style="width: 100%; border-radius: 8px; background: #eee;">
-            <source src="static/videos/indoor_walking_1_3dot25.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <div style="text-align:center; margin-top:0.5em; color:#555;">Forward Locomotion (Indoor)</div>
-        </div>
-        <div style="flex: 1 1 45%; max-width: 45%; min-width: 300px; margin-bottom: 1.5em;">
-          <video controls muted loop style="width: 100%; border-radius: 8px; background: #eee;">
-            <source src="static/videos/outdoor_walking_4_3dot25.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <div style="text-align:center; margin-top:0.5em; color:#555;">Forward Locomotion (Outdoor)</div>
-        </div>
-        <div style="flex: 1 1 45%; max-width: 45%; min-width: 300px; margin-bottom: 1.5em;">
-          <video controls muted loop style="width: 100%; border-radius: 8px; background: #eee;">
-            <source src="static/videos/outdoor_walking_5_3dot25.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <div style="text-align:center; margin-top:0.5em; color:#555;">Backward Locomotion (Outdoor)</div>
-        </div>
-        <div style="flex: 1 1 45%; max-width: 45%; min-width: 300px; margin-bottom: 1.5em;">
-          <video controls muted loop style="width: 100%; border-radius: 8px; background: #eee;">
-            <source src="static/videos/outdoor_walking_6_lateral_3dot25.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <div style="text-align:center; margin-top:0.5em; color:#555;">Lateral Locomotion (Outdoor)</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3" style="text-align:center;">Misc</h2>
-      <div style="margin-top:2em;">
-        <h3 class="title is-4" style="text-align:center;">Implementation Details</h3>
-        <div style="color:#555; text-align:center; margin-top:0.5em;">
-          <p>
-            <div style="max-width:800px; margin:0 auto;">
-              We employ the <a href="https://playground.mujoco.org/" target="_blank">MuJoCo Playground</a> and <a href="https://github.com/google/brax" target="_blank">Brax</a> to help implement the algorithm. The original while loop implementation of the MJX solver, <code>jax.lax.while_loop</code>, 
-              performs dynamic iteration based on runtime conditions and thus cannot be statically unrolled during JIT compilation, 
-              which means it does not support gradient computation. Original code snippet:
-            </div>
-          <div style="margin-top:1em; text-align:center;">
-            <div style="display:inline-block; max-width:600px; width:100%;">
-              <div style="background:#f6f8fa; border:1px solid #d0d7de; border-radius:6px; overflow:hidden;">
-                <div style="display:flex; align-items:center; justify-content:space-between; background:#f6f8fa; border-bottom:1px solid #d0d7de; padding:0.5em 1em;">
-                  <div style="font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; font-size:0.95em; color:#57606a;">
-                    <svg style="vertical-align:middle; margin-right:0.3em;" height="18" viewBox="0 0 16 16" width="18" aria-hidden="true"><path fill="#24292f" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.01.08-2.1 0 0 .67-.21 2.2.82a7.65 7.65 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.09.16 1.9.08 2.1.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.19 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
-                    <span>mjx/mujoco/mjx/_src/solver.py</span>
-                    <span style="color:#d0d7de; margin:0 0.5em;">|</span>
-                    <span style="color:#57606a;">L598-L602</span>
+                <li><strong>Results:</strong>
+                  We conduct extensive benchmark experiments and demonstrate the effectiveness of the proposed
+                  exploration
+                  augmentation method for improving sample efficiency and training stability.
+                  <div style="display: flex; justify-content: center; gap: 1.5em; margin: 1em 0;">
+                    <img src="static/images/benchmark_result.png" alt="Simulation Results"
+                      style="max-width:100%; height:260px; object-fit:contain; border-radius:8px;">
                   </div>
-                  <a href="https://github.com/google-deepmind/mujoco/blob/3a299c49caf3d2f227755860b6f60ce0995f46b4/mjx/mujoco/mjx/_src/solver.py#L598-L602" target="_blank" style="text-decoration:none; color:#3273dc; font-weight:bold; font-size:0.95em;">
-                    View on GitHub
-                  </a>
+                  <div style="text-align:center;">
+                    <p style="font-size:0.95em; color:#555; margin-top:0.5em;">
+                      Benchmark Results
+                    </p>
+                  </div>
+                  We further test our approach on a 6-DOF point-foot robot for velocity tracking locomotion,
+                  and conduct the simulation test and implement a successful sim-to-real deployment as the ultimate
+                  validation.
+                  See simulation test and sim-to-real deployment results below.
+                </li>
+                <div
+                  style="display: flex; justify-content: center; gap: 1.5em; margin: 1em 0; align-items: flex-start;">
+                  <div style="display: flex; flex-direction: column; align-items: center; flex: 1 1 0;">
+                    <div style="height:180px; display:flex; align-items:center;">
+                      <img src="static/images/tron_selfie.jpg" alt="6-DoF biped robot."
+                        style="height:180px; width:auto; object-fit:contain; border-radius:8px; display:block;">
+                    </div>
+                    <div style="text-align:center; font-size:0.95em; color:#555; margin-top:0.3em;">6 DoF Biped Robot,
+                      LimX TRON</div>
+                  </div>
+                  <div style="display: flex; flex-direction: column; align-items: center; flex: 1 1 0;">
+                    <div style="height:180px; display:flex; align-items:center;">
+                      <img src="static/images/velocity_tracking_plot.jpg"
+                        alt="Velocity tracking error for biped locomotion comparison."
+                        style="height:180px; width:auto; object-fit:contain; border-radius:8px; display:block;">
+                    </div>
+                    <div style="text-align:center; font-size:0.95em; color:#555; margin-top:0.3em;">Velocity Tracking
+                      Error</div>
+                  </div>
+                  <div style="display: flex; flex-direction: column; align-items: center; flex: 1 1 0;">
+                    <div style="height:180px; display:flex; align-items:center;">
+                      <img src="static/images/bcmk_tronpfjoystick.png" alt="Training curve of ours and baseline."
+                        style="height:180px; width:auto; object-fit:contain; border-radius:8px; display:block;">
+                    </div>
+                    <div style="text-align:center; font-size:0.95em; color:#555; margin-top:0.3em;">Training Curve</div>
+                  </div>
                 </div>
-                <pre id="github-code-snippet" style="background:#fff; margin:0; padding:1em; font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; font-size:0.97em; color:#24292f; overflow-x:auto; min-height:80px; text-align:left;">加载中...</pre>
-              </div>
+
+
+
+                </li>
+
+                <li><strong>Discussion:</strong>
+                  <ul style="margin-top:0.5em; margin-bottom:0.5em;">
+                    <li>
+                      The proposed method bridges the gap between data-expensive on-policy reinforcement learning and
+                      sample-efficient analytical gradient approaches.
+                      RL, known as a zero-order gradient based approach, is inefficient but fexible for reward form.
+                      APG, a first-order gradient based approach, is efficient but limited to differentiable reward
+                      functions.
+                      Our approach has the potential to unify both advantages by employing analytical gradients only to
+                      guide
+                      exploration, which only requires the task reward function to be differentiable.
+                      In main policy update, can still optimize over a broader reward function that includes
+                      non-differentiable
+                      regularization terms, thereby offering greater compatibility than purely gradient-based methods.
+                    </li>
+                    <li>
+                      Why we keep part of data from primary policy rollout for main policy update?
+                      (1) The APG-guided exploratory policy is short-horizon and may get trapped in local optima,
+                      reducing state-action coverage.
+                      Retaining PPO's undirected samples preserves global exploration diversity and prevents local
+                      convergence.
+                      (2) Analytical gradients may be inaccurate due to model errors or discontinuities, producing poor
+                      exploratory behaviors.
+                      PPO data provides robustness and prevents policy degeneration under such cases.
+                    </li>
+                    <li>
+                      Our exploration augmentation method may lose effcacy under sparse reward settings, such as the
+                      sparse goal-reaching task.
+                    </li>
+                    <li> Our method heavily relies on the fidelity of the differentiable dynamics simulation.
+                  </ul>
+
+
+                </li>
+              </ul>
             </div>
-          </div>
-          <script>
-            // 自动抓取 GitHub 仓库文件片段并显示
-            (function() {
-              const url = "https://raw.githubusercontent.com/google-deepmind/mujoco/3a299c49caf3d2f227755860b6f60ce0995f46b4/mjx/mujoco/mjx/_src/solver.py";
-              const startLine = 598;
-              const endLine = 602;
-              const pre = document.getElementById('github-code-snippet');
-              fetch(url)
-                .then(resp => resp.ok ? resp.text() : Promise.reject('cannot get code'))
-                .then(text => {
-                  const lines = text.split('\n');
-                  // note: line number starts from 1
-                  const snippet = lines.slice(startLine - 1, endLine).join('\n');
-                  pre.textContent = snippet || 'no code snippet found';
-                })
-                .catch(e => {
-                  pre.textContent = 'loading failed: ' + e;
-                });
-            })();
-          </script>
-          We replace the <code>jax.lax.while_loop</code> to <code>_while_loop_scan</code> provided by the MJX to support gradient computation.
-      <div style="margin-top:2em; text-align:center;">
-        <div style="display:inline-block; max-width:600px; width:100%;">
-          <div style="background:#f6f8fa; border:1px solid #d0d7de; border-radius:6px; overflow:hidden;">
-            <div style="display:flex; align-items:center; justify-content:space-between; background:#f6f8fa; border-bottom:1px solid #d0d7de; padding:0.5em 1em;">
-              <div style="font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; font-size:0.95em; color:#57606a;">
-                <svg style="vertical-align:middle; margin-right:0.3em;" height="18" viewBox="0 0 16 16" width="18" aria-hidden="true"><path fill="#24292f" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.01.08-2.1 0 0 .67-.21 2.2.82a7.65 7.65 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.09.16 1.9.08 2.1.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.19 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg>
-                <span>mjx/mujoco/mjx/_src/solver.py</span>
-                <span style="color:#d0d7de; margin:0 0.5em;">|</span>
-                <span style="color:#57606a;">L239-L253</span>
-              </div>
-              <a href="https://github.com/google-deepmind/mujoco/blob/3a299c49caf3d2f227755860b6f60ce0995f46b4/mjx/mujoco/mjx/_src/solver.py#L239C1-L253C63" target="_blank" style="text-decoration:none; color:#3273dc; font-weight:bold; font-size:0.95em;">
-                View on GitHub
-              </a>
-            </div>
-            <pre id="github-code-snippet-scan" style="background:#fff; margin:0; padding:1em; font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; font-size:0.97em; color:#24292f; overflow-x:auto; min-height:80px; text-align:left;">加载中...</pre>
           </div>
         </div>
       </div>
-      <script>
-        // 动态抓取 GitHub 仓库文件片段并显示
-        (function() {
-          const url = "https://raw.githubusercontent.com/google-deepmind/mujoco/3a299c49caf3d2f227755860b6f60ce0995f46b4/mjx/mujoco/mjx/_src/solver.py";
-          const startLine = 239;
-          const endLine = 253;
-          const pre = document.getElementById('github-code-snippet-scan');
-          fetch(url)
-            .then(resp => resp.ok ? resp.text() : Promise.reject('cannot get code'))
-            .then(text => {
-              const lines = text.split('\n');
-              // note: line number starts from 1
-              const snippet = lines.slice(startLine - 1, endLine).join('\n');
-              pre.textContent = snippet || 'no code snippet found';
-            })
-            .catch(e => {
-              pre.textContent = 'loading failed: ' + e;
-            });
-        })();
-      </script>
+    </section>
+    <!-- End TL;DR -->
+
+    <section class="hero is-small">
+      <div class="hero-body">
+        <div class="container">
+          <h2 class="title is-3" style="text-align:center;">Simulation Test</h2>
+          <div style="display: flex; flex-wrap: nowrap; justify-content: center; gap: 1.5em;">
+            <div style="flex: 1 1 0; max-width: 32%; min-width: 220px;">
+              <video controls muted loop style="width: 100%; border-radius: 8px; background: #eee;">
+                <source src="static/videos/sim_demo_ours.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div style="text-align:center; margin-top:0.5em; color:#555;">Ours</div>
+            </div>
+            <div style="flex: 1 1 0; max-width: 32%; min-width: 220px;">
+              <video controls muted loop style="width: 100%; border-radius: 8px; background: #eee;">
+                <source src="static/videos/sim_demo_ppo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div style="text-align:center; margin-top:0.5em; color:#555;">Baseline (PPO)</div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
+
+
+    <section class="hero is-small">
+      <div class="hero-body">
+        <div class="container">
+          <h2 class="title is-3" style="text-align:center;">Sim-to-Real Experiments</h2>
+          <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5em;">
+            <div style="flex: 1 1 45%; max-width: 45%; min-width: 300px; margin-bottom: 1.5em;">
+              <video controls muted loop style="width: 100%; border-radius: 8px; background: #eee;">
+                <source src="static/videos/indoor_walking_1_3dot25.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div style="text-align:center; margin-top:0.5em; color:#555;">Forward Locomotion (Indoor)</div>
+            </div>
+            <div style="flex: 1 1 45%; max-width: 45%; min-width: 300px; margin-bottom: 1.5em;">
+              <video controls muted loop style="width: 100%; border-radius: 8px; background: #eee;">
+                <source src="static/videos/outdoor_walking_4_3dot25.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div style="text-align:center; margin-top:0.5em; color:#555;">Forward Locomotion (Outdoor)</div>
+            </div>
+            <div style="flex: 1 1 45%; max-width: 45%; min-width: 300px; margin-bottom: 1.5em;">
+              <video controls muted loop style="width: 100%; border-radius: 8px; background: #eee;">
+                <source src="static/videos/outdoor_walking_5_3dot25.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div style="text-align:center; margin-top:0.5em; color:#555;">Backward Locomotion (Outdoor)</div>
+            </div>
+            <div style="flex: 1 1 45%; max-width: 45%; min-width: 300px; margin-bottom: 1.5em;">
+              <video controls muted loop style="width: 100%; border-radius: 8px; background: #eee;">
+                <source src="static/videos/outdoor_walking_6_lateral_3dot25.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              <div style="text-align:center; margin-top:0.5em; color:#555;">Lateral Locomotion (Outdoor)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero is-small">
+      <div class="hero-body">
+        <div class="container">
+          <h2 class="title is-3" style="text-align:center;">Misc</h2>
+          <div style="margin-top:2em;">
+            <h3 class="title is-4" style="text-align:center;">Implementation Details</h3>
+            <div style="color:#555; text-align:center; margin-top:0.5em;">
+              <p>
+              <div style="max-width:800px; margin:0 auto;">
+                We employ the <a href="https://playground.mujoco.org/" target="_blank">MuJoCo Playground</a> and <a
+                  href="https://github.com/google/brax" target="_blank">Brax</a> to help implement the algorithm. The
+                original while loop implementation of the MJX solver, <code>jax.lax.while_loop</code>,
+                performs dynamic iteration based on runtime conditions and thus cannot be statically unrolled during JIT
+                compilation,
+                which means it does not support gradient computation. Original code snippet:
+              </div>
+              <div style="margin-top:1em; text-align:center;">
+                <div style="display:inline-block; max-width:600px; width:100%;">
+                  <div style="background:#f6f8fa; border:1px solid #d0d7de; border-radius:6px; overflow:hidden;">
+                    <div
+                      style="display:flex; align-items:center; justify-content:space-between; background:#f6f8fa; border-bottom:1px solid #d0d7de; padding:0.5em 1em;">
+                      <div
+                        style="font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; font-size:0.95em; color:#57606a;">
+                        <svg style="vertical-align:middle; margin-right:0.3em;" height="18" viewBox="0 0 16 16"
+                          width="18" aria-hidden="true">
+                          <path fill="#24292f"
+                            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.01.08-2.1 0 0 .67-.21 2.2.82a7.65 7.65 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.09.16 1.9.08 2.1.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.19 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z">
+                          </path>
+                        </svg>
+                        <span>mjx/mujoco/mjx/_src/solver.py</span>
+                        <span style="color:#d0d7de; margin:0 0.5em;">|</span>
+                        <span style="color:#57606a;">L598-L602</span>
+                      </div>
+                      <a href="https://github.com/google-deepmind/mujoco/blob/3a299c49caf3d2f227755860b6f60ce0995f46b4/mjx/mujoco/mjx/_src/solver.py#L598-L602"
+                        target="_blank"
+                        style="text-decoration:none; color:#3273dc; font-weight:bold; font-size:0.95em;">
+                        View on GitHub
+                      </a>
+                    </div>
+                    <pre id="github-code-snippet"
+                      style="background:#fff; margin:0; padding:1em; font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; font-size:0.97em; color:#24292f; overflow-x:auto; min-height:80px; text-align:left;">加载中...</pre>
+                  </div>
+                </div>
+              </div>
+              <script>
+                // 自动抓取 GitHub 仓库文件片段并显示
+                (function () {
+                  const url = "https://raw.githubusercontent.com/google-deepmind/mujoco/3a299c49caf3d2f227755860b6f60ce0995f46b4/mjx/mujoco/mjx/_src/solver.py";
+                  const startLine = 598;
+                  const endLine = 602;
+                  const pre = document.getElementById('github-code-snippet');
+                  fetch(url)
+                    .then(resp => resp.ok ? resp.text() : Promise.reject('cannot get code'))
+                    .then(text => {
+                      const lines = text.split('\n');
+                      // note: line number starts from 1
+                      const snippet = lines.slice(startLine - 1, endLine).join('\n');
+                      pre.textContent = snippet || 'no code snippet found';
+                    })
+                    .catch(e => {
+                      pre.textContent = 'loading failed: ' + e;
+                    });
+                })();
+              </script>
+              We replace the <code>jax.lax.while_loop</code> to <code>_while_loop_scan</code> provided by the MJX to
+              support gradient computation.
+              <div style="margin-top:2em; text-align:center;">
+                <div style="display:inline-block; max-width:600px; width:100%;">
+                  <div style="background:#f6f8fa; border:1px solid #d0d7de; border-radius:6px; overflow:hidden;">
+                    <div
+                      style="display:flex; align-items:center; justify-content:space-between; background:#f6f8fa; border-bottom:1px solid #d0d7de; padding:0.5em 1em;">
+                      <div
+                        style="font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; font-size:0.95em; color:#57606a;">
+                        <svg style="vertical-align:middle; margin-right:0.3em;" height="18" viewBox="0 0 16 16"
+                          width="18" aria-hidden="true">
+                          <path fill="#24292f"
+                            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.01.08-2.1 0 0 .67-.21 2.2.82a7.65 7.65 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.09.16 1.9.08 2.1.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.19 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z">
+                          </path>
+                        </svg>
+                        <span>mjx/mujoco/mjx/_src/solver.py</span>
+                        <span style="color:#d0d7de; margin:0 0.5em;">|</span>
+                        <span style="color:#57606a;">L239-L253</span>
+                      </div>
+                      <a href="https://github.com/google-deepmind/mujoco/blob/3a299c49caf3d2f227755860b6f60ce0995f46b4/mjx/mujoco/mjx/_src/solver.py#L239C1-L253C63"
+                        target="_blank"
+                        style="text-decoration:none; color:#3273dc; font-weight:bold; font-size:0.95em;">
+                        View on GitHub
+                      </a>
+                    </div>
+                    <pre id="github-code-snippet-scan"
+                      style="background:#fff; margin:0; padding:1em; font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace; font-size:0.97em; color:#24292f; overflow-x:auto; min-height:80px; text-align:left;">加载中...</pre>
+                  </div>
+                </div>
+              </div>
+              <script>
+                // 动态抓取 GitHub 仓库文件片段并显示
+                (function () {
+                  const url = "https://raw.githubusercontent.com/google-deepmind/mujoco/3a299c49caf3d2f227755860b6f60ce0995f46b4/mjx/mujoco/mjx/_src/solver.py";
+                  const startLine = 239;
+                  const endLine = 253;
+                  const pre = document.getElementById('github-code-snippet-scan');
+                  fetch(url)
+                    .then(resp => resp.ok ? resp.text() : Promise.reject('cannot get code'))
+                    .then(text => {
+                      const lines = text.split('\n');
+                      // note: line number starts from 1
+                      const snippet = lines.slice(startLine - 1, endLine).join('\n');
+                      pre.textContent = snippet || 'no code snippet found';
+                    })
+                    .catch(e => {
+                      pre.textContent = 'loading failed: ' + e;
+                    });
+                })();
+              </script>
+            </div>
+          </div>
+        </div>
+    </section>
 
 
 
 
-<!-- Paper poster -->
-<!-- <section class="hero is-small is-light">
+    <!-- Paper poster -->
+    <!-- <section class="hero is-small is-light">
   <div class="hero-body">
     <div class="container">
       <h2 class="title">Poster</h2>
@@ -647,34 +692,39 @@
       </div>
     </div>
   </section> -->
-<!--End paper poster -->
+    <!--End paper poster -->
 
 
-  <footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
+    <footer class="footer">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-8">
+            <div class="content">
 
-          <p>
-            <span style="font-size: 0.8em; display: block; text-align: center;">
-              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-              <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
-              Commons Attribution-ShareAlike 4.0 International License</a>.
-            </span>
-          </p>
+              <p>
+                <span style="font-size: 0.8em; display: block; text-align: center;">
+                  This page was built using the <a
+                    href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic
+                    Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io"
+                    target="_blank">Nerfies</a> project page.
+                  <br> This website is licensed under a <a rel="license"
+                    href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+                    Commons Attribution-ShareAlike 4.0 International License</a>.
+                </span>
+              </p>
 
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</footer>
+    </footer>
 
-<!-- Statcounter tracking code -->
-  
-<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+    <!-- Statcounter tracking code -->
+
+    <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
 
     <!-- End of Statcounter Code -->
 
-  </body>
-  </html>
+</body>
+
+</html>
